@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="./UI_Wz.css" />
+    <script src="./UI_WZ.js"></script>
+</head>
+<body>
+    
+
+            <div class="">
+                <input type="radio" id="name" name="22" class="WZRadio" checked>
+                <label for="name">你的名字</label>
+            </div>
+            <div class="">
+                <input type="radio" id="name2" name="22" class="WZRadio">
+                <label for="name2">你的名字</label>
+            </div>
+            <div class="" >
+                <input type="checkbox" id="name4" name="22" class="WZcheckBox">
+                <label for="name4">你的名字</label>
+            </div>
+            <div class="" >
+                <input type="checkbox" id="name5" name="22" class="WZcheckBox">
+                <label for="name5">你的名字</label>
+            </div>
+            <div class="switch-container">
+                <input id="switch" type="checkbox" class="switch" />
+                <label for="switch" onclick="test()"></label>
+            </div>
+
+            
+            　　　　</body>
+            
+            　　</html></p>
+    <button onclick="goToast()">toast</button>
+    <button onclick="goMessage()">Message</button>
+    <button onclick="goLoading()">Message</button>
+    <label for="" class="WZRadios" >
+        <input type="radio" class="WZRadio">
+    </label>
+    <script >
+        function goToast(){
+            WZtoast("你好");            
+        }
+        function goMessage(){
+            WZmessage('是否要删除图片?',function(){
+                console.log('success');
+            });
+        }
+        function goLoading(){
+            WZloading();
+            setTimeout(function(){
+                WZloading('close');  
+            },4500)
+                      
+        }
+    </script>
+</body>
+</html>
