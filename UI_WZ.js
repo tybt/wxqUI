@@ -129,6 +129,32 @@
     }
   }
 
+  // a cookie名字 b cookie的值 c cookie存的时间(天)
+  function WZcookie(a,b,c){
+    if(b==undefined){ // 读取
+      var name = a + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++){
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0){
+          return c.substring(name.length,c.length);
+        } 
+      }
+    }
+    if(b!==undefined){ //写入
+      if(c==undefined){
+        document.cookie=a+'='+escape(b);
+      }
+      else{
+        var d = new Date();
+        d.setTime(d.getTime()+(c*24*60*60*1000));
+        var expires = "expires="+d.toGMTString();
+        document.cookie = a + "=" + b + "; " + expires;
+  
+      }
+    }
+  }
+
 
 
 
